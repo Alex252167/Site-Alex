@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo de Alex Carvalho</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 3px solid #4c6baf;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #534caf;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            animation: slideIn 1.2s ease-in-out;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .objective, .skills, .projects {
+            line-height: 1.8;
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* Skills list */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: #333;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Hover effect for project section */
+        .projects {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .projects:hover {
+            background-color: #c8e6c9;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Alex Carvalho Silva</h1>
+        </header>
+        
+        <div class="section contact-info">
+            <h2>Informações de Contato</h2>
+            <p>Email: fatcarvalho2006@gmail.com</p>
+            <p>Telefone: (11) 95880-5343</p>
+            <p>Endereço: Rua Manoel Moreira de Sá, N°38</p>
+        </div>
+
+        <div class="section">
+            <h2>Objetivo Profissional</h2>
+            <p>Meu objetivo profissional é trabalhar em uma área onde eu possa fazer uma gestão comercial de uma empresa com forte base em tecnologia.</p>
+        </div>
+
+        <div class="section">
+            <h2>Formação Acadêmica</h2>
+            <p>Ensino médio técnico em IOT no Senac Nações Unidas, cursando, término previsto para dezembro de 2024.</p>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades Técnicas e Soft Skills</h2>
+            <ul>
+                <li>Trabalho em equipe</li>
+                <li>Liderança</li>
+                <li>Gestão de setores</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Projetos e Experiências</h2>
+            <p class="projects">Trabalho voluntário em abrigos e orfanatos aos finais de semana.</p>
+        </div>
+    </div>
+</body>
+</html>

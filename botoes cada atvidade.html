@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades Favoritas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: radial-gradient(circle at center, #001f3f, #000814);
+      position: relative;
+    }
+ 
+    /* Camada de estrelas pequenas */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+      background-size: 3px 3px;
+      animation: moveStars 20s linear infinite;
+      z-index: -2;
+    }
+ 
+    /* Camada de estrelas maiores */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 2px, transparent 2px);
+      background-size: 5px 5px;
+      animation: moveStars 30s linear infinite reverse;
+      z-index: -1;
+    }
+ 
+    /* Planetas animados */
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #0056b3, #001f4d);
+      box-shadow: 0 0 15px rgba(0, 100, 255, 0.5);
+      animation: float 10s infinite ease-in-out;
+    }
+ 
+    .planet-1 {
+      width: 60px;
+      height: 60px;
+      top: 20%;
+      left: 15%;
+      animation-delay: 0s;
+    }
+ 
+    .planet-2 {
+      width: 80px;
+      height: 80px;
+      top: 50%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+ 
+    .planet-3 {
+      width: 50px;
+      height: 50px;
+      bottom: 30%;
+      left: 40%;
+      animation-delay: 4s;
+    }
+ 
+    @keyframes moveStars {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+ 
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+ 
+    h1 {
+      color: #ffffff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      margin: 20px 0;
+      font-size: 2.5rem;
+      z-index: 1;
+    }
+ 
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+ 
+    .navbar button {
+      background: linear-gradient(45deg, #004d99, #00ace6);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+ 
+    .navbar button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+ 
+    .navbar button:active {
+      transform: scale(1);
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+ 
+    .content {
+      margin-top: 20px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atividades Favoritas</h1>
+  <div class="navbar">
+    <button>História</button>
+    <button>Geografia</button>
+    <button>Sociologia</button>
+    <button>Filosofia</button>
+    <button>Química</button>
+    <button>Biologia</button>
+    <button>Física</button>
+    <button>Educação Física</button>
+    <button>Inglês</button>
+    <button>Português</button>
+    <button>Artes</button>
+    <button>Matemática</button>
+    <button>Técnico</button>
+  </div>
+  <div class="content">
+    <p>Escolha uma atividade para saber mais!</p>
+  </div>
+  <div class="planet planet-1"></div>
+  <div class="planet planet-2"></div>
+  <div class="planet planet-3"></div>
+</body>
+</html>

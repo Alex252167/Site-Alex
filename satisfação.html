@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        header, h1, h2 {
+            text-align: center;
+            color: #004d99;
+        }
+        fieldset {
+            margin-bottom: 1em;
+            border: 1px solid #00cc66;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e6ffec;
+        }
+        legend {
+            color: #004d99;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 0.5em 0 0.2em;
+            color: #006633;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #00cc66;
+            outline: none;
+            box-shadow: 0 0 5px #00cc66;
+        }
+        button {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #004d99;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0066cc;
+        }
+        /* Estilos para botões de rádio e caixas de seleção */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 0.5em;
+        }
+        /* Estilo da área de saída simulada */
+        #output {
+            border: 1px solid #ddd;
+            padding: 1em;
+            background-color: #f9f9f9;
+            margin-top: 1em;
+        }
+        #outputData {
+            color: #004d99;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Site de Alex</h1>
+        <h2>Pesquisa de Satisfação</h2>
+    </header>
+
+    <!-- Formulário de Pesquisa -->
+    <form id="satisfactionForm">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Avaliação de Site</legend>
+            <label>Avalie meu site:</label>
+            <label><input type="radio" name="avaliacao" value="1"> 1 Estrela</label>
+            <label><input type="radio" name="avaliacao" value="2"> 2 Estrelas</label>
+            <label><input type="radio" name="avaliacao" value="3"> 3 Estrelas</label>
+            <label><input type="radio" name="avaliacao" value="4"> 4 Estrelas</label>
+            <label><input type="radio" name="avaliacao" value="5"> 5 Estrelas</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Feedback</legend>
+            <label><input type="checkbox" name="feedback" value="Facilidade de Navegação"> Facilidade de Navegação</label>
+            <label><input type="checkbox" name="feedback" value="Design do Site"> Design do Site</label>
+            <label><input type="checkbox" name="feedback" value="Velocidade de Carregamento"> Estrutura do site</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Comentários Adicionais</legend>
+            <label for="comentarios">Comentários:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Digite seus comentários aqui..."></textarea>
+        </fieldset>
+
+        <button type="button" onclick="salvarDados()">Enviar</button>
+    </form>
+
+    <!-- Área para simular o armazenamento dos dados -->
+    <div id="output">
+        <pre id="outputData">Dados simulados:</pre>
+    </div>
+
+    <!-- Script para simular o armazenamento dos dados -->
+    <script>
+        function salvarDados() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const avaliacao = document.querySelector('input[name="avaliacao"]:checked')?.value;
+            const feedbacks = Array.from(document.querySelectorAll('input[name="feedback"]:checked')).map(el => el.value);
+            const comentarios = document.getElementById('comentarios').value;
+
+            const dados = `
+Nome: ${nome}
+Email: ${email}
+Avaliação: ${avaliacao || 'Não avaliado'}
+Feedback: ${feedbacks.join(', ') || 'Nenhum feedback selecionado'}
+Comentários: ${comentarios || 'Nenhum comentário'}
+            `;
+
+            document.getElementById('outputData').textContent = dados;
+        }
+    </script>
+
+</body>
+</html>
